@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block title %}<title>UNIVERSE</title>{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylessheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <script> src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"</script>
+    <script> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"</script>
+    <script src="https://cdn.tiny.cloud/1/lj2uhvyoarjvzi7o6rx1csqmobtypxwj2dmf1uv0x4vgkyg5/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+        selector: 'textarea',
+        height: 700,
+        plugins: 'autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        setup: function (editor) {
+            editor.on('change', function () {
+                editor.save();
+            });
+        }
+    });
+    </script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block head %}
+
+        <!-- <img class="head" src="{% static 'images/VERSE_2.png' %}"> -->
+        <div class="head">
+            UNIVERSE
+        </div>
+
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                {% block sidebar %}
+                <div class="sidebar-nav">
+                    <div>
+                        <a class="button_head" href=""><b>ЧТО</b></a>
+                    </div>
+                    <div>
+                        <a class="button_head" href=""><b>ЧТО-ТО</b></a>
+                    </div>
+                    <div>
+                        <a class="button_head" href=""><b>ЧТО-ТО-ТО</b></a>
+                    </div>
+                    {% if user.is_staff == True %}
+                        <div>
+                            <a class="button_head" href = 'new_article/';><b>НАПИСАТЬ СТАТЬЮ</b></a>
+                        </div>
+                    {% endif %}
+                    {% if user.is_authenticated%}
+                        <form id="logoutForm" method="post" action="{% url 'logout' %}" style="display: none;">
+                            {% csrf_token %}
+                        </form>
+                        <a href="#" onclick="document.getElementById('logoutForm').submit(); return false;" class="button_head_ex"><b>ВЫЙТИ</b></a>
+                    {% else %}
+                        <div>
+                            <a class="button_head" href="login/login/"><b>ВОЙТИ</b></a>
+                        </div>
+                    {% endif %}
+
+                </div>
+                {% endblock %}
+            </div>
+            <div class="col-sm-10">
+                {% block content%}{% endblock %}
+                {% block footer %}
+                    {% block copyright %}
+                    <p class="footer">Хрен тебе, а не мой сайт</p>
+                    {% endblock %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

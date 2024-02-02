@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <style>
+        .myfield{
+            border: 2px;
+            border-radius: 5px;
+            height: 25px;
+            width: 200px;
+            margin: 10px 0px 10px;
+            
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(18, 0, 20);
+        }
+
+        .field{font-weight: bold;}
+        .field{color: white;}
+
+
+    </style>
+</head>
+{%block content%}
+<body class="container">
+    <form method="POST">
+        {%csrf_token%}
+        <div class="main">
+            {%for field in form%}
+            <div class="row">
+                {{field.label_tag}}
+                <div class="col-md-10">{{field}}</div>
+            </div>
+            {%endfor%}
+        </div>
+        <input type="submit" value="Login">
+    </form>
+</body>
+{%endblock content%}
+</html>

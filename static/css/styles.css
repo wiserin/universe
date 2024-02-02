@@ -1,0 +1,219 @@
+html {
+    background-image: url('back_1.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.head {
+    background-color: #f5bd7e98;
+    color: rgb(92, 63, 0);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 60px;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+
+.sidebar-nav {
+    display: flex;
+    padding-top: 7px;
+    justify-content: center;
+
+}
+
+.button_head {
+    background-color: #f5bd7e98;
+    color: rgb(70, 45, 0);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    text-decoration: none;
+    padding: 7px 10px !important;
+    font-family: 'Open Sans', sans-serif !important;
+
+    transition: background-color 0.2s linear;
+}
+
+.button_head:hover {
+    background-color: #9b7b5698;
+}
+
+.button_head_ex {
+    background-color: #f5bd7e98 !important;
+    color: rgb(70, 45, 0) !important;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-right-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    text-decoration: none !important;
+    margin-top: -7px !important;
+    padding: 7px 10px !important;
+    font-family: 'Open Sans', sans-serif !important;
+
+    transition: background-color 0.2s linear !important;
+}
+
+.button_head_ex:hover {
+    background-color: #9b7b5698 !important;
+}
+
+
+.button_article {
+    background-color: #f5bd7e98;
+    color: rgb(70, 45, 0);
+    border-radius: 10px;
+    text-decoration: none;
+    width: 50%;
+    height: 50px;
+    padding: 7px 10px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+
+    transition: background-color 0.2s linear;
+}
+
+.button_article:hover {
+    background-color: #9b7b5698;
+}
+
+.article_desc {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(70, 45, 0);
+}
+
+.article {
+    display: flex;
+    justify-content: center;
+}
+
+.articles {
+    margin-top: 10%;
+    
+}
+
+.main {
+    margin-left: 4%;
+    margin-top: 5%;
+}
+
+.input-lable {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 15px;
+}
+
+.main-article {
+    margin-top: 20px;
+}
+
+.myfield{
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: auto;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    font-size: 18px;
+    background-color: #9b7b5600;
+    
+}
+
+.mytextarea {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: auto;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    font-size: 18px;
+    background-color: #9b7b5600;
+}
+
+
+.lable {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.text_field {
+    border: 1;
+    border-radius: 10;
+    background-position: 20%;
+    height: 100%;
+    width: 100%;
+    margin: 10px 0px 10px;
+    
+}
+
+.text-field-inp {
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: auto;
+    outline: none;
+    border-radius: 0;
+    appearance: none;
+    font-size: 18px;
+    background-color: #9b7b5600;
+}
+
+
+.login-form {
+    justify-content: center;
+    margin-top: 17%;
+}
+
+.error-404 {
+    display: flex;
+    justify-content: center;
+    background-color: #f5bd7e98;
+    color: rgb(70, 45, 0);
+    border-radius: 10px;
+    padding: 17px 20px;
+    font-size: 50px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 17%;
+    margin-left: 35%;
+    width: 30%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30%;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 5;
+    outline: none;
+    margin-left: 45%;
+
+}
+
+.article-sh {
+    margin-top: 5% !important;
+    margin-left: 20% !important;
+    display: contents !important;
+    justify-content: center !important;
+}

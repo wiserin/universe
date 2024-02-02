@@ -1,0 +1,15 @@
+{% extends "base_generic.html"%}
+
+{% load static %}
+
+{% block content %}
+
+<body>
+    <div style="margin-top: 5%; margin-left: 32%;">
+        <h1>{{article.heading}}</h1>
+        <h1></h1>
+        <h3>{{article.content | safe }}</h3>
+    </div>
+</body>
+
+{% endblock content %}

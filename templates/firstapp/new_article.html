@@ -1,0 +1,18 @@
+{% extends "base_generic.html"%}
+
+{% load static %}
+
+{% block content %}
+
+<body>
+    {% if user.is_staff == True %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="width: 80%; margin-top: 10%; margin-left: 10%;">{{ form.as_p }}</div>
+            <input class="form-btn" type="submit" value="ОПУБЛИКОВАТЬ" />
+        </form>
+    {% else %}
+        <div class="error-404">ОШИБКА 404</div>
+    {% endif %}
+</body>
+{% endblock content %}

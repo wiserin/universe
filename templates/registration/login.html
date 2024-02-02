@@ -1,0 +1,60 @@
+{% extends "base_generic.html"%}
+
+{% block content %}
+
+{% if form.errors %}
+    <p>Ошибка</p>
+
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>Хрен тебе, а не страница</p>
+    {% else %}
+        <p>Войди в систему</p>
+    {% endif %}
+{% endif %}
+
+<style>
+    .myfield{
+        border: 3px;
+        border-radius: 20px;
+        border-color: white;
+        height: 25px;
+        width: 200px;
+        margin: 10px 0px 10px;
+        }
+    .container {
+        height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .field{font-weight: bold;}
+    .field{color: white;}
+
+</style>
+
+{% if user.is_authenticated %}
+    <p>Ты уже вошел</p>
+{% else %}
+    <div class="login-form">
+        <form method="post" action="{% url 'login' %}" class="container">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td class="myfield">{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td class="myfield">{{ form.password}}</td>
+                </tr>
+            </table>
+            <input type="submit" value="Enter" />
+            <input type="hidden" name="next" value="{{next}}" />
+        </form>
+    </div>
+{% endif%}
+{% endblock %}
