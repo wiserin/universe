@@ -9,7 +9,7 @@
 
 {% if next %}
     {% if user.is_authenticated %}
-        <p>Хрен тебе, а не страница</p>
+        <p>_</p>
     {% else %}
         <p>Войди в систему</p>
     {% endif %}
@@ -37,7 +37,7 @@
 </style>
 
 {% if user.is_authenticated %}
-    <p>Ты уже вошел</p>
+    <p>Вы уже вошли</p>
 {% else %}
     <div class="login-form">
         <form method="post" action="{% url 'login' %}" class="container">
