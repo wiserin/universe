@@ -28,7 +28,7 @@ def new_article(request):
         form = ArticleForm(request.POST)
         if form.is_valid():
             form.save()
-            # Вы можете добавить дополнительную логику, например, перенаправление на страницу с новой статьей.
+
             return HttpResponsePermanentRedirect('/')
     else:
         form = ArticleForm()
